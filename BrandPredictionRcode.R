@@ -13,14 +13,13 @@
 # This description uses C5.0 and Randomforest model                                  #
 ######################################################################################
 
-
 # Uploading library ####
-library(readr)
-library(caret)
-library(C50)
-library(inum)
-library(plyr)
-library(ggplot2)
+library(readr)                                                                       # Reading data set 
+library(caret)                                                                       # Prediction
+library(C50)                                                                         # C5.0 algorythm
+library(inum)                                                                        # Representation of vectors and intervals
+library(plyr)                                                                        # Breaking big problems down into managable pieces and bringing back together
+library(ggplot2)                                                                     # Visualization
 
 # C5 ####
 # Reading Complete data ####
@@ -117,7 +116,6 @@ varImp(rfFitm1)
 predictionComplete <- predict(rfFitm1,testing)
 postResample(predictionComplete,testing$brand)
 
-
 # Read data
 Cust.Incomplete.rawdata <- read.csv("SurveyIncomplete.csv", TRUE, sep =",")
 Cust.Incomplete.Prediction <- Cust.Incomplete.rawdata
@@ -138,7 +136,6 @@ myPrediction
 #changing the appearance
 Cust.Incomplete.Prediction$brand <- myPrediction
 
-
 # Visualization ####
 # Preprocessing the data
 Cust.Incomplete.Prediction <- as.matrix(Cust.Incomplete.Prediction)
@@ -158,14 +155,7 @@ Combineddata$brand = mapvalues(Combineddata$brand,
                                from = c("0", "1"),
                                to = c("Acer", "Sony")
                               )
-#Combineddata$brand = mapvalues(Combineddata$brand,
-#                               from = c("Acer", "Sony"), 
-#                               to = c("0", "1")
-#                              )
 
 # Complete visualization ####
 myplot <- ggplot(Combineddata, aes(x = age, y = salary, fill = brand, color = brand)) + geom_point()
 myplot + scale_fill_manual(values = c("blue","red")) 
-
-
-
