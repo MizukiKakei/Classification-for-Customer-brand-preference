@@ -5,8 +5,10 @@ This project is about complete the missing data of brand preference (Sony and Ac
 
 ### Data set
 Two data sets were provided.
+
 1, Complete data has 9898 observations.
 2, Incomplete data has 5000 observations.
+
 Both data sets have attributes of 
 - salary
 - age
