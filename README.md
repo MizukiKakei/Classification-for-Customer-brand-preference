@@ -21,4 +21,6 @@ Both data sets have attributes of
 
 ### Methodes of analysis
 The number of attributes was reduced to 5 from 7 based on the variance importance. 
-Randomforest and C5.0 were applied to the modeling.
+Randomforest and C5.0 were applied to the modeling. 
+In the end, since C5.0 model obtained higher accuracy than Randomforest model,
+The prediction of Brand preference was made based on C5.0 model.
